@@ -30,8 +30,7 @@
         <fieldset>
             <legend>Edit CSS</legend>
 
-            <textarea name="edit_css">
-            </textarea>
+            <textarea rows="25" name="edit_css" tal:content="view/getPloneCustom"></textarea>
 
             <div class="formControls" style="padding-top: 1em">
                 <input class="context"

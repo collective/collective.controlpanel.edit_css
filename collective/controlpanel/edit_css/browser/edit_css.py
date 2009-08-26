@@ -1,6 +1,35 @@
 
 from Products.Five.browser import BrowserView
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+from zope.app.component.hooks import getSite
+from Products.PageTemplates.ZopePageTemplate import ZopePageTemplate 
 
 class EditCSS(BrowserView):
-    pass
 
+    template = ViewPageTemplateFile('edit_css.pt')
+
+    def __call__(self,*args,**kw):
+        request = self.context.request
+        form = request.form
+
+        # XXX Help! There has to be a better way.
+        contains = form.__contains__
+        if contains('edit_css') and contains('submit'):
+            if form['submit'] == 'Save':
+                self.setPloneCustom(form['edit_css'])
+        return self.template()
+
+    def getPloneCustom(self):
+        site = getSite()
+        skins = site.portal_skins
+        return skins.custom['ploneCustom.css'].document_src()
+
+    def setPloneCustom(self,text):
+        site = getSite()
+        skins = site.portal_skins
+        try:
+            skins.custom['ploneCustom.css'].pt_edit(text,'text/html')
+        except:
+            ploneCustom=ZopePageTemplate('ploneCustom.css')
+            skins.custom._setObject(text,ploneCustom)
+            #skins.custom['ploneCustom.css'].pt_edit(text,'text/html')
