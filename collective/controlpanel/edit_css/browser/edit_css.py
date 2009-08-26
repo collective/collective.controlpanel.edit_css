@@ -36,9 +36,4 @@ class EditCSS(BrowserView):
     def setPloneCustom(self,text):
         site = getSite()
         skins = site.portal_skins
-#        try:
         skins.custom['ploneCustom.css'].pt_edit(text,'text/html')
-#        except:
-#            ploneCustom=ZopePageTemplate('ploneCustom.css')
-#            skins.custom._setObject(text,ploneCustom)
-#            #skins.custom['ploneCustom.css'].pt_edit(text,'text/html')
