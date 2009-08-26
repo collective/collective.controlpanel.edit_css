@@ -9,6 +9,7 @@
       for="Products.CMFPlone.interfaces.IPloneSiteRoot"
       name="edit_css"
       class=".edit_css.EditCSS"
+      template="edit_css.pt"
       permission="cmf.ManagePortal"
   />
 
