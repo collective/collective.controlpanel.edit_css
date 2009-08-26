@@ -7,6 +7,7 @@ from Products.PageTemplates.ZopePageTemplate import ZopePageTemplate
 class EditCSS(BrowserView):
 
     template = ViewPageTemplateFile('edit_css.pt')
+    default_text = u'/* DELETE THIS LINE AND PUT YOUR CUSTOM STUFF HERE */'
 
     def __call__(self,*args,**kw):
         request = self.context.request
@@ -22,14 +23,22 @@ class EditCSS(BrowserView):
     def getPloneCustom(self):
         site = getSite()
         skins = site.portal_skins
-        return skins.custom['ploneCustom.css'].document_src()
+        try: 
+            return skins.custom['ploneCustom.css'].document_src()
+        except:
+            id = 'ploneCustom.css'
+            text = self.default_text
+            content_type = 'text/html'
+            obj=ZopePageTemplate(id,text,content_type)
+            skins.custom._setObject(id,obj)
+            return skins.custom['ploneCustom.css'].document_src()
 
     def setPloneCustom(self,text):
         site = getSite()
         skins = site.portal_skins
-        try:
-            skins.custom['ploneCustom.css'].pt_edit(text,'text/html')
-        except:
-            ploneCustom=ZopePageTemplate('ploneCustom.css')
-            skins.custom._setObject(text,ploneCustom)
-            #skins.custom['ploneCustom.css'].pt_edit(text,'text/html')
+#        try:
+        skins.custom['ploneCustom.css'].pt_edit(text,'text/html')
+#        except:
+#            ploneCustom=ZopePageTemplate('ploneCustom.css')
+#            skins.custom._setObject(text,ploneCustom)
+#            #skins.custom['ploneCustom.css'].pt_edit(text,'text/html')
