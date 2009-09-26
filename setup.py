@@ -28,5 +28,7 @@ setup(name='collective.controlpanel.edit_css',
       ],
       entry_points="""
       # -*- Entry points: -*-
+      [z3c.autoinclude.plugin]
+      target = plone
       """,
       )
