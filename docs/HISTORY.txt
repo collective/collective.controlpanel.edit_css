@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.2 FHNW 0.1 (2009-09-28)
+-------------------------
+
+* added support for ploneCustom.css as DTML Method (or other object types) [ristow]
+* the changes will be applied on-the-fly (it's not needed to set debug-modus) [ristow]
+
 0.1 (2009-08-26)
 ----------------
 
