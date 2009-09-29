@@ -9,7 +9,7 @@ class EditCSS(BrowserView):
 
     template = ViewPageTemplateFile('edit_css.pt')
     default_text = u'/* DELETE THIS LINE AND PUT YOUR CUSTOM STUFF HERE */'
-    customcss = u'ploneCustom.css'
+    customcss = 'ploneCustom.css'
 
     def __call__(self,*args,**kw):
         request = self.context.request
