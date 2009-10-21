@@ -8,9 +8,9 @@
   <!-- Register the installation GenericSetup extension profile -->
   <genericsetup:registerProfile
       name="default"
-      title="Edit CSS"
+      title="Edit CSS/JS"
       directory="profiles/default"
-      description="Edit CSS from Plone control panel."
+      description="Edit CSS/JS from Plone Control Panel."
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
