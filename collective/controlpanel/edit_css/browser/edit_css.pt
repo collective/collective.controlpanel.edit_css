@@ -23,11 +23,9 @@
 
     <form method="post" action="@@edit_css">
 
-        <p>This is where you can put CSS to override Plone's default CSS.
-        <span class="discreet">Don't forget to turn on CSS debug mode first. You can do that easily from within Plone by installing this <a href="http://plone.org/products/collective.controlpanel.debug_css">add-on</a>.</p>
+        <p>Here you can add custom CSS to override Plone's default CSS.</p>
 
         <div class="field">
-
         <fieldset>
             <legend>Edit CSS</legend>
 
