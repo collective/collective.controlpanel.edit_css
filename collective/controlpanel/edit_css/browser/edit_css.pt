@@ -39,7 +39,7 @@
                 <fieldset>
                     <legend>Edit CSS</legend>
 
-                    <textarea rows="25" name="edit_css" tal:content="view/getPloneCustom"></textarea>
+                    <textarea rows="25" name="edit_css" tal:content="view/getPloneCustomCSS"></textarea>
 
                     <div class="formControls" style="padding-top: 1em">
                         <input class="context"
@@ -55,7 +55,7 @@
         </dd>
 
         <dd id="fieldset-unique-id2">
-            <form method="post" action="@@edit_js">
+            <form method="post" action="@@edit_css">
 
                 <p>Here you can add custom JS to override Plone's default JS.</p>
 
@@ -63,7 +63,7 @@
                 <fieldset>
                     <legend>Edit JS</legend>
 
-                    <textarea rows="25" name="edit_js" tal:content="view/getPloneCustom"></textarea>
+                    <textarea rows="25" name="edit_js" tal:content="view/getPloneCustomJS"></textarea>
 
                     <div class="formControls" style="padding-top: 1em">
                         <input class="context"
