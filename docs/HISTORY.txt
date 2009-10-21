@@ -5,7 +5,7 @@ Changelog
 -------------------------
 
 * Added action icon [aclark]
-* Add form tabs to make contol panel sexy [aclark]
+* Add form tabs to make control panel sexy [aclark]
 * (Hot) jQuery example courtesy of Matt Bowen
 * Add Javascript edit support [aclark]
 * Merge in collective.controlpanel.debug_css [aclark]
