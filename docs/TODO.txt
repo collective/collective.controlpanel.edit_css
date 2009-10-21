@@ -1,0 +1,15 @@
+
+TODO
+====
+
+[ ] Make form tabbing "save state." Right now after submit, user is returned to
+    first tab no matter which tab was submitted.
+
+[ ] Reduce tabs as suggested by ErikRose:
+    12:52 < ErikRose> Seems to me you could just have 2 tabs: CSS and JavaScript. In each is an edit field and a "[X] JavaScript
+                      debug mode" or "[X] CSS debug mode"
+    12:52 <@esteele> Agreed.
+    12:53 < aclark> k
+    12:53 < ErikRose> Nice work, aclark!
+    12:53 < aclark> In 0.3 then :-)
+    12:53 < ErikRose> A definite win.
