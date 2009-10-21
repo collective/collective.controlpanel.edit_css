@@ -2,9 +2,12 @@
 TODO
 ====
 
+[ ] Fix browser form processing as described in 
+    http://docs.zope.org/zope2/zope2book/ScriptingZope.html#passing-parameters-to-scripts
+
 [ ] Add install instructions.
 
-[ ] Make form tabbing "save state." Right now after submit, user is returned to
+[ ] Make html form tabbing "save state." Right now after submit, user is returned to
     first tab no matter which tab was submitted.
 
 [ ] Reduce tabs as suggested by ErikRose:
