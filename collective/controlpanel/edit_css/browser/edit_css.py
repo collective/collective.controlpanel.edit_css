@@ -57,44 +57,6 @@ class EditCSS(BrowserView):
             skins.custom._setObject(id, obj)
             return skins.custom[self.custom_css].document_src()
 
-    def setPloneCustomCSS(self, text):
-        site = getSite()
-        skins = site.portal_skins
-        obj = skins.custom[self.custom_css]
-        try:
-            if hasattr(obj, 'manage_edit'):
-                # DTMLMethod
-                obj.manage_edit(text, 'text/html')
-            else:
-                # ZopePageTemplate
-                obj.pt_edit(text, 'text/html')
-        except:
-            raise Exception("It's not possible to update object %s. "
-                "Use '%s' instead." % (repr(obj), "ZopePageTemplate"))
-        self.updatePloneCustomCSS()
-
-    def updatePloneCustomCSS(self):
-        site = getSite()
-        cssreg = getToolByName(site, 'portal_css', None)
-        if cssreg is not None:
-            stylesheet_ids = cssreg.getResourceIds()
-            if self.custom_css not in stylesheet_ids:
-                cssreg.registerStylesheet(id=sheetId, enabled=True)
-                cssreg.cookResources()
-            else:
-                cssreg.updateStylesheet(self.custom_css, enabled=True)
-                cssreg.cookResources()
-
-    def getDebugMode(self):
-        site = getSite() 
-        css_tool = getToolByName(site, 'portal_css') 
-        return css_tool.getDebugMode()
-
-    def setDebugMode(self, value):
-        site = getSite() 
-        css_tool = getToolByName(site, 'portal_css') 
-        css_tool.setDebugMode(value)
-
     def getPloneCustomJS(self):
         site = getSite()
         skins = site.portal_skins
@@ -113,6 +75,22 @@ class EditCSS(BrowserView):
             skins.custom._setObject(id, obj)
             return skins.custom[self.custom_js].document_src()
 
+    def setPloneCustomCSS(self, text):
+        site = getSite()
+        skins = site.portal_skins
+        obj = skins.custom[self.custom_css]
+        try:
+            if hasattr(obj, 'manage_edit'):
+                # DTMLMethod
+                obj.manage_edit(text, 'text/html')
+            else:
+                # ZopePageTemplate
+                obj.pt_edit(text, 'text/html')
+        except:
+            raise Exception("It's not possible to update object %s. "
+                "Use '%s' instead." % (repr(obj), "ZopePageTemplate"))
+        self.updatePloneCustomCSS()
+
     def setPloneCustomJS(self, text):
         site = getSite()
         skins = site.portal_skins
@@ -129,6 +107,18 @@ class EditCSS(BrowserView):
                 "Use '%s' instead." % (repr(obj), "ZopePageTemplate"))
         self.updatePloneCustomJS()
 
+    def updatePloneCustomCSS(self):
+        site = getSite()
+        cssreg = getToolByName(site, 'portal_css', None)
+        if cssreg is not None:
+            stylesheet_ids = cssreg.getResourceIds()
+            if self.custom_css not in stylesheet_ids:
+                cssreg.registerStylesheet(id=sheetId, enabled=True)
+                cssreg.cookResources()
+            else:
+                cssreg.updateStylesheet(self.custom_css, enabled=True)
+                cssreg.cookResources()
+
     def updatePloneCustomJS(self):
         site = getSite()
         jsreg = getToolByName(site, 'portal_javascripts', None)
@@ -141,10 +131,20 @@ class EditCSS(BrowserView):
                 jsreg.updateScript(self.custom_js, enabled=True)
                 jsreg.cookResources()
 
+    def getDebugModeCSS(self):
+        site = getSite() 
+        css_tool = getToolByName(site, 'portal_css') 
+        return css_tool.getDebugMode()
+
     def getDebugModeJS(self):
         site = getSite()
         js_tool = getToolByName(site, 'portal_javascripts')
         return js_tool.getDebugMode()
+
+    def setDebugModeCSS(self, value):
+        site = getSite() 
+        css_tool = getToolByName(site, 'portal_css') 
+        css_tool.setDebugMode(value)
 
     def setDebugModeJS(self, value):
         site = getSite()

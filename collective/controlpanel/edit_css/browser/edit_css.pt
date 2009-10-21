@@ -79,7 +79,7 @@
         </dd>
         <dd id="fieldset-unique-id3">
 
-            <form method="post" action="@@toggle_css_debug">
+            <form method="post" action="@@edit_css">
 
                 <div class="field">
 
@@ -90,7 +90,7 @@
                     <legend>Toggle CSS Debug</legend>
 
                     <input type="checkbox" name="toggle_css_debug" id="toggle_css_debug"
-                        tal:attributes="checked view/getDebugMode">
+                        tal:attributes="checked view/getDebugModeCSS">
 
                     <label for="toggle_css_debug">Debug/development mode</label>
 
@@ -109,7 +109,7 @@
         </dd>
         <dd id="fieldset-unique-id4">
 
-            <form method="post" action="@@toggle_js_debug">
+            <form method="post" action="@@edit_css">
 
                 <div class="field">
 
@@ -121,7 +121,7 @@ Recommended during javascript-related development. Remember to turn it off again
                     <legend>Toggle JS Debug</legend>
 
                     <input type="checkbox" name="toggle_js_debug" id="toggle_js_debug"
-                        tal:attributes="checked view/getDebugMode">
+                        tal:attributes="checked view/getDebugModeJS">
 
                     <label for="toggle_js_debug">Debug/development mode</label>
 
