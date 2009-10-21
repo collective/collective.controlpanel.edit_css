@@ -2,6 +2,8 @@
 TODO
 ====
 
+[ ] Add install instructions.
+
 [ ] Make form tabbing "save state." Right now after submit, user is returned to
     first tab no matter which tab was submitted.
 
