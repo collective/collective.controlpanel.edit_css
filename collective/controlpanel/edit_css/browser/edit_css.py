@@ -5,15 +5,13 @@ from zope.app.component.hooks import getSite
 from Products.PageTemplates.ZopePageTemplate import ZopePageTemplate
 
 default_css = """
-/* DELETE THIS LINE AND PUT YOUR CUSTOM STUFF HERE */'
-/* E.g. 
-body{background:black;} 
+/* DELETE THIS LINE AND PUT YOUR CUSTOM STUFF HERE. E.g.
+body{background:black;}
 */
 """
 
 default_js = """
-/* DELETE THIS LINE AND PUT YOUR CUSTOM STUFF HERE */'
-/* E.g.
+/* DELETE THIS LINE AND PUT YOUR CUSTOM STUFF HERE. E.g.
 jq(function () { jq("h1").hide("slow"); } );
 */
 """
@@ -135,7 +133,8 @@ class EditCSS(BrowserView):
         if cssreg is not None:
             stylesheet_ids = cssreg.getResourceIds()
             if self.custom_css not in stylesheet_ids:
-                cssreg.registerStylesheet(id=sheetId, enabled=True)
+#y               cssreg.registerStylesheet(id=sheetId, enabled=True)
+                cssreg.registerStylesheet(id=self.custom_css, enabled=True)
                 cssreg.cookResources()
             else:
                 cssreg.updateStylesheet(self.custom_css, enabled=True)
@@ -145,9 +144,9 @@ class EditCSS(BrowserView):
         site = getSite()
         jsreg = getToolByName(site, 'portal_javascripts', None)
         if jsreg is not None:
-            stylesheet_ids = jsreg.getResourceIds()
-            if self.custom_js not in stylesheet_ids:
-                jsreg.registerScript(id=sheetId, enabled=True)
+            script_ids = jsreg.getResourceIds()
+            if self.custom_js not in script_ids:
+                jsreg.registerScript(id=self.custom_js, enabled=True)
                 jsreg.cookResources()
             else:
                 jsreg.updateScript(self.custom_js, enabled=True)
