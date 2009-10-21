@@ -12,11 +12,4 @@
       permission="cmf.ManagePortal"
   />
 
-  <browser:page
-      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
-      name="edit_js"
-      class=".edit_css.EditJS"
-      permission="cmf.ManagePortal"
-  />
-
 </configure>
