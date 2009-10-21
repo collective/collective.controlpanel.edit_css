@@ -26,11 +26,11 @@
     </tal:comment>
 
     <dl class="enableFormTabbing">
-        <dt id="fieldsetlegend-unique-id1">Edit CSS</dt>
-        <dt id="fieldsetlegend-unique-id2">Edit JS</dt>
-        <dt id="fieldsetlegend-unique-id3">Debug CSS</dt>
-        <dt id="fieldsetlegend-unique-id4">Debug JS</dt>
-        <dd id="fieldset-unique-id1">
+        <dt id="fieldsetlegend-edit-css">Edit CSS</dt>
+        <dt id="fieldsetlegend-edit-js">Edit JS</dt>
+        <dt id="fieldsetlegend-debug-css">Debug CSS</dt>
+        <dt id="fieldsetlegend-debug-js">Debug JS</dt>
+        <dd id="fieldset-edit-css">
             <form method="post" action="@@edit_css">
 
                 <p>Here you can add custom CSS to override Plone's default CSS.</p>
@@ -54,7 +54,7 @@
             </form>
         </dd>
 
-        <dd id="fieldset-unique-id2">
+        <dd id="fieldset-edit-js">
             <form method="post" action="@@edit_css">
 
                 <p>Here you can add custom JS to override Plone's default JS.</p>
@@ -77,7 +77,7 @@
 
             </form>
         </dd>
-        <dd id="fieldset-unique-id3">
+        <dd id="fieldset-debug-css">
 
             <form method="post" action="@@edit_css">
 
@@ -107,7 +107,7 @@
             </form>
 
         </dd>
-        <dd id="fieldset-unique-id4">
+        <dd id="fieldset-debug-js">
 
             <form method="post" action="@@edit_css">
 
