@@ -4,7 +4,6 @@ from Products.CMFCore.utils import getToolByName
 from zope.app.component.hooks import getSite
 from Products.PageTemplates.ZopePageTemplate import ZopePageTemplate
 
-
 default_css = """
 /* DELETE THIS LINE AND PUT YOUR CUSTOM STUFF HERE */'
 /* E.g. 
