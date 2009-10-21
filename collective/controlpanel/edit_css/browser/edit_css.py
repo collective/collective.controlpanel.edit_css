@@ -5,10 +5,25 @@ from zope.app.component.hooks import getSite
 from Products.PageTemplates.ZopePageTemplate import ZopePageTemplate
 
 
+default_css = """
+/* DELETE THIS LINE AND PUT YOUR CUSTOM STUFF HERE */'
+/* E.g. 
+body{background:black;} 
+*/
+"""
+
+default_js = """
+/* DELETE THIS LINE AND PUT YOUR CUSTOM STUFF HERE */'
+/* E.g.
+jq(function () { jq("h1").hide("slow"); } );
+*/
+"""
+
 class EditCSS(BrowserView):
 
     template = ViewPageTemplateFile('edit_css.pt')
-    default_text = u'/* DELETE THIS LINE AND PUT YOUR CUSTOM STUFF HERE */'
+    default_css = default_css
+    default_js = default_js
     custom_css = 'ploneCustom.css'
     custom_js = 'ploneCustom.js'
 
@@ -59,7 +74,7 @@ class EditCSS(BrowserView):
                     "ZopePageTemplate"))
         else:
             id = self.custom_css
-            text = self.default_text
+            text = self.default_css
             content_type = 'text/html'
             obj = ZopePageTemplate(id, text, content_type)
             skins.custom._setObject(id, obj)
@@ -77,7 +92,7 @@ class EditCSS(BrowserView):
                     "ZopePageTemplate"))
         else:
             id = self.custom_js
-            text = self.default_text
+            text = self.default_js
             content_type = 'text/html'
             obj = ZopePageTemplate(id, text, content_type)
             skins.custom._setObject(id, obj)
@@ -133,7 +148,7 @@ class EditCSS(BrowserView):
         if jsreg is not None:
             stylesheet_ids = jsreg.getResourceIds()
             if self.custom_js not in stylesheet_ids:
-                jsreg.registerStylesheet(id=sheetId, enabled=True)
+                jsreg.registerScript(id=sheetId, enabled=True)
                 jsreg.cookResources()
             else:
                 jsreg.updateScript(self.custom_js, enabled=True)
