@@ -31,11 +31,19 @@ class EditCSS(BrowserView):
 
         if contains('toggle_css_debug') and contains('submit'):
             if form['toggle_css_debug'] == 'on' and form['submit'] == 'Save':
-                self.setDebugMode(True)
+                self.setDebugModeCSS(True)
 
         if not contains('toggle_css_debug') and contains('submit'):
             if form['submit'] == 'Save':
-                self.setDebugMode(False)
+                self.setDebugModeCSS(False)
+
+        if contains('toggle_js_debug') and contains('submit'):
+            if form['toggle_js_debug'] == 'on' and form['submit'] == 'Save':
+                self.setDebugModeJS(True)
+
+        if not contains('toggle_js_debug') and contains('submit'):
+            if form['submit'] == 'Save':
+                self.setDebugModeJS(False)
 
         return self.template()
 
