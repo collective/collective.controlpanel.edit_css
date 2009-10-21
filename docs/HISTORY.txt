@@ -4,13 +4,14 @@ Changelog
 0.2 (2009-10-21)
 -------------------------
 
+* Added action icon [aclark]
 * Add form tabs to make contol panel sexy [aclark]
-* Add JS example [mrbowen]
-* Add JS edit support [aclark]
+* (Hot) jQuery example courtesy of Matt Bowen
+* Add Javascript edit support [aclark]
 * Merge in collective.recipe.debug_css [aclark]
 * Added support for ploneCustom.css as DTML Method (or other object types) [ristow]
 * Changes will be applied on-the-fly (it's not needed to set debug-mode) [ristow]
-* Add JS debug support [espenmn]
+* Add Javascript debug support [espenmn]
 
 0.1 (2009-08-26)
 ----------------
