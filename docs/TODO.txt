@@ -2,6 +2,21 @@
 TODO
 ====
 
+[ ] Custom the right ploneCustom.css, as suggested by Eric Steele.
+        10:39 <@esteele> aclark: And as far as edit_css in Plone 4.x, I'd like to see
+                it modify ploneCustom.css.
+        10:40 < aclark> esteele: That's what it does
+        10:40 < aclark> (and ploneCustom.js)
+        10:41 <@esteele> Oh? I'd expected to see the contents of Sunburst's
+                ploneCustom when I first viewed it.
+        10:42 <@esteele> Ah, so if there's not a ploneCustom.css in custom, it just
+                creates one?
+        10:42 < aclark> esteele: It creates an empty ploneCustom.css… but yeah… yes
+        10:42 <@esteele> Could I suggest walking the skin layers to find the first
+                instance?
+        10:42 < aclark> sure
+        10:43 < aclark> I'll add a todo
+
 [ ] Fix browser form processing as described in 
     http://docs.zope.org/zope2/zope2book/ScriptingZope.html#passing-parameters-to-scripts
 
@@ -11,10 +26,10 @@ TODO
     first tab no matter which tab was submitted.
 
 [ ] Reduce tabs as suggested by ErikRose:
-    12:52 < ErikRose> Seems to me you could just have 2 tabs: CSS and JavaScript. In each is an edit field and a "[X] JavaScript
-                      debug mode" or "[X] CSS debug mode"
-    12:52 <@esteele> Agreed.
-    12:53 < aclark> k
-    12:53 < ErikRose> Nice work, aclark!
-    12:53 < aclark> In 0.3 then :-)
-    12:53 < ErikRose> A definite win.
+        12:52 < ErikRose> Seems to me you could just have 2 tabs: CSS and JavaScript. 
+                In each is an edit field and a "[X] JavaScript debug mode" or "[X] CSS debug mode"
+        12:52 <@esteele> Agreed.
+        12:53 < aclark> k
+        12:53 < ErikRose> Nice work, aclark!
+        12:53 < aclark> In 0.3 then :-)
+        12:53 < ErikRose> A definite win.
