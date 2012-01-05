@@ -25,8 +25,7 @@ class EditCSS(BrowserView):
     custom_js = 'ploneCustom.js'
 
     def __call__(self, *args, **kw):
-        request = self.context.REQUEST
-        form = request.form
+        form = self.request.form
 
         # XXX Replace this with Zope 2 form processing
         # http://docs.zope.org/zope2/zope2book/ScriptingZope.html#passing-parameters-to-scripts

@@ -1,8 +1,13 @@
 Changelog
 =========
 
+0.3 (svn/unreleased)
+--------------------
+
+* get request the right way [tom_gross]
+
 0.2 (2009-10-21)
--------------------------
+----------------
 
 * Added action icon [aclark]
 * Add form tabs to make control panel sexy [aclark]
