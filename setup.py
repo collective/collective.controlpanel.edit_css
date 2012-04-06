@@ -6,7 +6,6 @@ VERSION = '0.2'
 
 
 setup(
-    name='collective.controlpanel.edit_css',
     classifiers=[
         "Framework :: Plone",
         "Framework :: Plone :: 3.2",
@@ -22,21 +21,25 @@ setup(
     entry_points={
         'z3c.autoinclude.plugin': 'target = plone',
     },
+    include_package_data=True,
+    license='ZPL',
     long_description=(
         open("README.rst").read() +
         open(os.path.join("docs", "HISTORY.txt")).read()),
     keywords='plone theme',
     author='Alex Clark',
     author_email='aclark@aclark.net',
-    url='',
-    license='GPL',
+    url='http://collective.github.com/collective.controlpanel.edit_css',
+    name='collective.controlpanel.edit_css',
+    namespace_packages=[
+        'collective',
+        'collective.controlpanel',
+    ],
     packages=find_packages(exclude=['ez_setup']),
-    namespace_packages=['collective', 'collective.controlpanel'],
-    include_package_data=True,
-    zip_safe=False,
     install_requires=[
         'setuptools',
         # -*- Extra requirements: -*-
     ],
     version=VERSION,
+    zip_safe=False,
 )
