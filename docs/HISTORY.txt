@@ -1,9 +1,10 @@
 Changelog
 =========
 
-0.3 (svn/unreleased)
---------------------
+0.3.0 (2012-04-06)
+------------------
 
+* package clean up [aclark]
 * get request the right way [tom_gross]
 
 0.2 (2009-10-21)
