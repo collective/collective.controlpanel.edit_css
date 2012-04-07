@@ -2,10 +2,12 @@ from setuptools import find_packages
 from setuptools import setup
 import os
 
-VERSION = '0.2'
+VERSION = '0.3.0'
 
 
 setup(
+    author='Alex Clark',
+    author_email='aclark@aclark.net',
     classifiers=[
         "Framework :: Plone",
         "Framework :: Plone :: 3.2",
@@ -22,24 +24,21 @@ setup(
         'z3c.autoinclude.plugin': 'target = plone',
     },
     include_package_data=True,
+    install_requires=[
+        'setuptools',
+    ],
+    keywords='plone theme',
     license='ZPL',
     long_description=(
         open("README.rst").read() +
         open(os.path.join("docs", "HISTORY.txt")).read()),
-    keywords='plone theme',
-    author='Alex Clark',
-    author_email='aclark@aclark.net',
-    url='http://collective.github.com/collective.controlpanel.edit_css',
     name='collective.controlpanel.edit_css',
     namespace_packages=[
         'collective',
         'collective.controlpanel',
     ],
-    packages=find_packages(exclude=['ez_setup']),
-    install_requires=[
-        'setuptools',
-        # -*- Extra requirements: -*-
-    ],
+    packages=find_packages(),
+    url='http://collective.github.com/collective.controlpanel.edit_css',
     version=VERSION,
     zip_safe=False,
 )
